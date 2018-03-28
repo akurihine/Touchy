@@ -3,7 +3,7 @@ package com.example.arkady.touchy.gesture
 import android.graphics.PointF
 import android.view.MotionEvent
 
-class MoveGestureDetector(private val mListener: OnMoveGestureListener) {
+class DragGestureDetector(private val mListener: OnMoveGestureListener) {
 
     private var mCurrFocusInternal: PointF? = null
     private var mPrevFocusInternal: PointF? = null
@@ -17,7 +17,7 @@ class MoveGestureDetector(private val mListener: OnMoveGestureListener) {
         private set
 
     interface OnMoveGestureListener {
-        fun onMove(detector: MoveGestureDetector): Boolean
+        fun onMove(detector: DragGestureDetector): Boolean
     }
 
     fun onTouchEvent(event: MotionEvent): Boolean {
